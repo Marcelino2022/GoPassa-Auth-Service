@@ -50,7 +50,7 @@ public class User {
     @Column(name = "password", nullable = true, length = 255)
     private String password;
 
-    @Column(name = "tenant_id", length = 36)
+    @Column(name = "tenant_id", length = 36, nullable = false)
     private String tenantId;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)

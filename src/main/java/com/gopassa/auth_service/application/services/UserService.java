@@ -33,7 +33,7 @@ public class UserService {
     public User create(CreateUserDTO createUserDTO) {
 
         String tenantId = createUserDTO.getTenantId();
-        if(tenantId == null){
+        if(tenantId.length() == 0 || tenantId.isBlank() || tenantId.isEmpty()){
             tenantId = UUID.randomUUID().toString();
         }
 
